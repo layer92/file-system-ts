@@ -43,8 +43,7 @@ function MaybeGetFileSystemPathParentPath(path) {
     }
     const name = MaybeGetFileSystemPathName(path);
     (0, core_1.Expect)(name !== undefined);
-    const nameNameWithSlash = name + "/";
-    const parentPath = path.slice(0, -nameNameWithSlash.length);
+    const parentPath = path.slice(0, -name.length);
     (0, core_1.Expect)(parentPath !== "");
     return parentPath;
 }
