@@ -1,10 +1,5 @@
 /// <reference types="node" />
-import { OnException } from "@layer92/core";
-import { FilePath } from "./FilePaths";
-import { FolderPath } from "./FolderPaths";
-import { FileSystemPath } from "./FileSystemPaths";
-import { FileName } from "./FileNames";
-import { FolderName } from "./FolderName";
+import { FileName, FilePath, FileSystemPath, FolderName, FolderPath, OnException } from "@layer92/core";
 type FileReadOptions = {
     encoding?: BufferEncoding;
 };

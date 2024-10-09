@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/layer92/file-system-ts#readme",
   "dependencies": {
-    "@layer92/core": "github:layer92/core-ts#v0.1.0",
+    "@layer92/core": "github:layer92/core-ts",
     "@types/node": "20.8.6",
     "typescript": "5.2.2"
   }

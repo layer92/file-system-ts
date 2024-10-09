@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LocalFolderFileDataCache = void 0;
-const FolderPaths_1 = require("./FolderPaths");
+const core_1 = require("@layer92/core");
 /** Allows you to cache data in files in a local folder. */
 class LocalFolderFileDataCache {
     constructor(_needs) {
         this._needs = _needs;
         this._isCacheFolderInitialized = false;
-        (0, FolderPaths_1.ExpectFolderPath)(_needs.cacheFolderPath);
+        (0, core_1.ExpectFolderPath)(_needs.cacheFolderPath);
     }
     _maybeInitialize() {
         if (!this._isCacheFolderInitialized) {

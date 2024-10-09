@@ -1,13 +1,10 @@
 import { appendFileSync, copyFileSync, existsSync, lstatSync, mkdirSync, readdirSync, readFileSync, renameSync, rmdirSync, rmSync, statSync, unlinkSync, writeFileSync } from "fs";
 import { readFile } from "fs/promises";
 import { resolve } from "path";
-import { Expect, OnException } from "@layer92/core";
+import { Expect, ExpectFileName, ExpectFilePath, ExpectFileSystemPath, ExpectFolderPath, FileName, FilePath, FileSystemPath, FolderName, FolderPath, IsFileSystemPathFilePath, IsFileSystemPathFolderPath, MoveFileSystemPathIntoFolderPath, OnException, RenameFilePathFileName, RenameFolderPath } from "@layer92/core";
 
-import { ExpectFilePath, FilePath, RenameFilePathFileName } from "./FilePaths";
-import { ExpectFolderPath, FolderPath, MoveFileSystemPathIntoFolderPath, RenameFolderPath } from "./FolderPaths";
-import { ExpectFileSystemPath, FileSystemPath, IsFileSystemPathFilePath, IsFileSystemPathFolderPath } from "./FileSystemPaths";
-import { ExpectFileName, FileName } from "./FileNames";
-import { FolderName } from "./FolderName";
+
+
 
 type FileReadOptions = {
     encoding?:BufferEncoding

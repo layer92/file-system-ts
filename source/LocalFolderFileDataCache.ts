@@ -1,4 +1,4 @@
-import { ExpectFolderPath } from "./FolderPaths";
+import { ExpectFolderPath } from "@layer92/core";
 import { LocalFileSystem } from "./LocalFileSystem";
 
 /** Allows you to cache data in files in a local folder. */
