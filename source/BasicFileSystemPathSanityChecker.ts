@@ -1,4 +1,4 @@
-import { Expect, OnException } from "@layer92/core";
+import { Expect, OnException, ReplaceCharacters } from "@layer92/core";
 
 /**
  * Checks that the path doesn't have any common mistakes / accidents, and throws an error if such would happen.
@@ -12,8 +12,10 @@ import { Expect, OnException } from "@layer92/core";
  * - the path "/"
  */
 export const BasicFileSystemPathSanityChecker = (path:string,onBadPath?:OnException)=>{
+    // path = decodeURIComponent(path);
+    path = ReplaceCharacters(path,"%2F","/");// %2F appears to be treated as "/" by node's file functions
     Expect(!path.includes("[object Object]"),`pathData: includes "[object Object]" pathData: ${path}`,onBadPath);
     Expect(!path.includes("*"), `pathData: includes "*" pathData: ${path}`,onBadPath);
-    Expect(!path.includes("../"), `pathData: includes ".." pathData: ${path}`,onBadPath);
+    Expect(!path.includes("../"), `pathData: includes "../" pathData: ${path}`,onBadPath);
     Expect(path!=="/", `pathData: is "/"`,onBadPath);
 }

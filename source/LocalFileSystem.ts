@@ -287,6 +287,7 @@ export class LocalFileSystem {
     }
     isFolderSync(fileSystemPath:FileSystemPath){
         ExpectFileSystemPath(fileSystemPath);
+        this._needs.observePath?.(fileSystemPath);
         if( fileSystemPath.includes("../") ){
             fileSystemPath = resolve(fileSystemPath);
         }
@@ -296,6 +297,7 @@ export class LocalFileSystem {
     /** Returns true if a folder or file exists at this path. */
     pathExistsSync(fileSystemPath:FileSystemPath):boolean{
         ExpectFileSystemPath(fileSystemPath);
+        this._needs.observePath?.(fileSystemPath);
         // unresolved pathBox with "../" will always return false
         // see others having this issue:
         // - https://stackoverflow.com/questions/55438404/fs-existssync-always-returning-false-when-path-has
